@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>てあせ日和 — 手汗に悩むすべての人へ</title>
+<meta name="description" content="手汗のこと、誰にも言えなかった。てあせ日和は手汗（手掌多汗症）に悩む人のための場所です。共感・情報・つながりをXで発信中。">
+<meta property="og:title" content="てあせ日和 — 手汗のこと、誰にも言えなかった。">
+<meta property="og:description" content="手汗に悩むあなたは、ひとりじゃない。同じ悩みを持つ仲間がここにいます。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #7BAFC4;
+    --primary-dark: #5A8FA6;
+    --primary-darker: #4A7D94;
+    --navy: #3B5063;
+    --light: #EAF2F6;
+    --lighter: #F4F7F9;
+    --warm-bg: #FAF8F5;
+    --white: #FFFFFF;
+    --text: #2D3748;
+    --muted: #718096;
+    --accent: #C4A87D;
+    --accent-light: #E8DBC8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.9;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--warm-bg);
+    color: var(--text);
+    padding: 120px 24px 96px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
+    opacity: 0.3;
+  }
+  .hero-inner { position: relative; max-width: 640px; margin: 0 auto; }
+  .hero-catch {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    letter-spacing: 0.04em;
+  }
+  .hero-sub {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 2;
+    margin-bottom: 40px;
+  }
+  .hero-brand {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+    letter-spacing: 0.2em;
+    margin-bottom: 32px;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 15px 44px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+  }
+  .cta-btn:hover { background: var(--primary-darker); transform: translateY(-1px); }
+  .cta-note {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* ── Section common ── */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 720px; margin: 0 auto; }
+
+  /* ── Empathy ── */
+  .empathy { background: var(--white); }
+  .empathy-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .voice-list { list-style: none; padding: 0; }
+  .voice-list li {
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    background: var(--warm-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+    position: relative;
+  }
+  .voice-list .voice-text {
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .voice-list .voice-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ── Value prop ── */
+  .value { background: var(--lighter); }
+  .value-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .value-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .value-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid var(--light);
+  }
+  .value-num {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+  .value-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .value-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ── About ── */
+  .about { background: var(--white); }
+  .about-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+  .about-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+  .about-text {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 2.1;
+    text-align: left;
+  }
+  .about-text p { margin-bottom: 20px; }
+  .about-sig {
+    margin-top: 32px;
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  /* ── CTA bottom ── */
+  .cta-section {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 72px 24px;
+  }
+  .cta-section h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .cta-section p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 32px;
+    line-height: 1.9;
+  }
+  .cta-section .cta-btn {
+    background: var(--accent);
+    color: var(--white);
+  }
+  .cta-section .cta-btn:hover { background: #b89a6e; }
+
+  /* ── Footer ── */
+  footer {
+    background: #2D3748;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 24px;
+    font-size: 0.72rem;
+  }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.8); }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    .hero { padding: 80px 20px 64px; }
+    .hero-catch { font-size: 1.4rem; }
+    section { padding: 56px 20px; }
+    .empathy-title, .value-title { font-size: 1.15rem; }
+    .value-grid { grid-template-columns: 1fr; gap: 16px; }
+    .voice-list li { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-brand">てあせ日和</p>
+    <h1 class="hero-catch">
+      手汗のこと、<br>
+      誰にも言えなかった。
+    </h1>
+    <p class="hero-sub">
+      「たかが汗でしょ？」って言われるのが怖くて、<br>
+      ずっと一人で抱えてきた。<br>
+      でも、あなたは一人じゃありません。
+    </p>
+    <a href="https://x.com/tease_hiyori" class="cta-btn" target="_blank" rel="noopener">Xで仲間とつながる</a>
+    <span class="cta-note">@tease_hiyori をフォロー（無料）</span>
+  </div>
+</header>
+
+<!-- Empathy -->
+<section class="empathy">
+  <div class="section-inner">
+    <h2 class="empathy-title">こんなこと、ありませんか？</h2>
+    <ul class="voice-list">
+      <li>
+        <p class="voice-text">テストの答案用紙が、いつもふやけていた。</p>
+        <p class="voice-desc">周りの子の紙はきれいなのに、自分のだけ波打っている。恥ずかしくて、答案を隠すように提出していた。</p>
+      </li>
+      <li>
+        <p class="voice-text">好きな人と手をつなぐのが、怖い。</p>
+        <p class="voice-desc">デートの日は朝からずっと緊張。手を握られそうになると、とっさに避けてしまう自分が嫌になる。</p>
+      </li>
+      <li>
+        <p class="voice-text">「なんか手、濡れてない？」のひと言で凍りつく。</p>
+        <p class="voice-desc">悪気がないのはわかる。でもその一言が、何日も頭の中でリピートし続ける。</p>
+      </li>
+      <li>
+        <p class="voice-text">ネットで調べても、何を信じればいいかわからない。</p>
+        <p class="voice-desc">治療法もグッズも山ほどあるけど、広告とリアルな情報の区別がつかない。同じ悩みの人の声が聞きたいだけなのに。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Value prop -->
+<section class="value">
+  <div class="section-inner">
+    <h2 class="value-title">Xをフォローすると、何がある？</h2>
+    <p class="value-subtitle">てあせ日和は、手汗に悩む人のための発信をしています。</p>
+    <div class="value-grid">
+      <div class="value-card">
+        <p class="value-num">01</p>
+        <h3>共感できる投稿</h3>
+        <p>「わかる」と思える日常のあるあるや、同じ悩みを持つ人たちの声。一人じゃないと感じられます。</p>
+      </div>
+      <div class="value-card">
+        <p class="value-num">02</p>
+        <h3>対策の情報</h3>
+        <p>市販グッズから医療機関での治療まで、実際に試した人の体験ベースの情報をわかりやすく紹介。</p>
+      </div>
+      <div class="value-card">
+        <p class="value-num">03</p>
+        <h3>仲間とのつながり</h3>
+        <p>リプやコメントで気軽に話せる場。手汗の話をオープンにできる、数少ないコミュニティです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about">
+  <div class="about-inner">
+    <p class="about-label">About</p>
+    <h2 class="about-title">なぜ、てあせ日和を始めたのか</h2>
+    <div class="about-text">
+      <p>子どもの頃から、手がいつも湿っていました。テストの答案はふやけ、友達のゲームのコントローラーを借りるのが申し訳なくて、好きな子と手をつなぐなんて考えられなかった。</p>
+      <p>大人になって皮膚科を受診し、「手掌多汗症」という診断名がついたとき、少しだけほっとしました。自分がおかしいわけじゃなかった、と。</p>
+      <p>でも本当に救われたのは、SNSで同じ悩みを持つ人の声に出会ったときでした。「自分だけじゃなかったんだ」。その気持ちが、何よりも大きかった。</p>
+      <p>てあせ日和は、あの日の自分のような人が「ここに来てよかった」と思える場所を目指しています。</p>
+    </div>
+    <p class="about-sig">— てあせ日和 運営</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>手汗のこと、話しませんか。</h2>
+  <p>一人で抱えなくていい。<br>同じ悩みを持つ仲間が、ここにいます。</p>
+  <a href="https://x.com/tease_hiyori" class="cta-btn" target="_blank" rel="noopener">Xで仲間とつながる</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 てあせ日和 &nbsp;|&nbsp; <a href="https://x.com/tease_hiyori" target="_blank" rel="noopener">@tease_hiyori</a></p>
+</footer>
+
+</body>
+</html>
